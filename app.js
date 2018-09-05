@@ -7,6 +7,8 @@ var logger = require('morgan');
 const homepageRouter = require('./Rpi/routes/homepage');
 const sensorsRouter = require('./Rpi/routes/sensors');
 const actuatorRouter = require('./Rpi/routes/actuators');
+const sensorAPIRouter = require('./Rpi/routes/sensorAPI');
+const acutatorAPIRouter = require('./Rpi/routes/actuatorAPI');
 
 var app = express();
 
@@ -23,6 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', homepageRouter);
 app.use('/sensors', sensorsRouter);
 app.use('/actuators', actuatorRouter);
+app.use('/api/sensors', sensorAPIRouter);
+app.use('/api/actuators', acutatorAPIRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

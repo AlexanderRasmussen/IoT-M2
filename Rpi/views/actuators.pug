@@ -4,5 +4,11 @@ block content
   h1= title
   p Welcome to #{title}
   
-  form(action="/actuators/toggleLED", method="get")
+  form(action="/api/actuators/toggleLED", method="get")
     button.btn.btn-primary(type='submit') Toggle LED
+
+  form(action="/api/actuators/turnOnLED", method="get")
+    button.btn.btn-primary(type='submit') Turn LED on
+
+  form(action="/api/actuators/turnOffLED", method="get")
+    button.btn.btn-primary(type='submit') Turn LED off

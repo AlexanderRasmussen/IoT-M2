@@ -13,7 +13,7 @@ module.exports.index = async (req, res) => {
 };
 
 module.exports.getHumidity = (req, res) => {
-    res.send({humidity: 27, unit: '%'}); //gpio.humidityRead()
+    res.send({humidity: 31, unit: '%'}); //gpio.humidityRead()
 }
 
 module.exports.getTemperature = (req, res) => {

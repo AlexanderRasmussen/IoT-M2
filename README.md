@@ -1,10 +1,10 @@
-# IoT - Milestone 1: Getting Started
+# IoT - Milestone 2: Inspecting & Adjusting
 ## Desciption
-This is the first Milestone assigment in the course "E18 - Building the Internet of Things with P2P and Cloud Computing"
+This is the second Milestone assigment in the course "E18 - Building the Internet of Things with P2P and Cloud Computing"
 
 ## How to run the code
 An automatic build pipeline has been setup, which builds the image on a raspberry Pi and push it to Docker Hub.
-The image of this repo is pushed to: https://hub.docker.com/r/raniot/gettingstarted/
+The image of this repo is pushed to: https://hub.docker.com/r/raniot/inspectingadjusting/
 
 #### Requirements:
 - A raspberry pi with docker installed
@@ -14,24 +14,19 @@ The image of this repo is pushed to: https://hub.docker.com/r/raniot/gettingstar
 
 The wiring is setup using the text in the image, so the components are getting the correct voltage.
 
-![alt text](https://github.com/Banders2/IoT-m1/blob/master/img/RaspberryGPIOSetup.png "Raspberry GPIO Setup")
+![alt text](https://github.com/Raniot/IoT-M2/blob/master/img/RaspberryGPIOSetup.png "Raspberry GPIO Setup")
 
 #### To run the image run: 
-- docker run -p 3000:3000 raniot/gettingstarted:22
+- docker pull raniot/inspectingadjusting:latest
+- docker run -p 3000:3000 raniot/inspectingadjusting:latest
 - Access http://localhost:3000
 
 ## Milestone Description
-### Milestone 1: Getting Started
-The purpose of this milestone is to get started with the Raspberry Pi, as well as your Docker and Node.js skills, if you are a little rusty.
+### Milestone 2: Inspecting & Adjusting
+The purpose of this milestone is implement the Web of Things model in a REST API.
 
-You should wire your components as shown on one of the last slides from the Friday lecture.
+You should provide a properly structured REST API for the sensors (and LEDs) attached to your RPi, following the design guidelines from the WoT book.
 
-Write a Node.js server that through a Web page reports on the state of the sensors on your RPi.
+You should create a Web page that dynamically, through your REST API, retrieves the information as well as enables the control of LEDs.
 
-Your system should ideally consist of a single Docker image that can be started on a (sensor connected) RPi, printing the URL that can visited to inspect the state of the sensors.
-
-You should deliver either a zip-file, or, better, a file consisting of the necessary git command to clone your repository.
-
-There should be a README.md file in the root with instructions.
-
-Deadline: 23:59 9/Sept/2018
+Deadline: Ultimo W37

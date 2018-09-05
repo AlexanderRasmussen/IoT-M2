@@ -1,7 +1,7 @@
 FROM raniot/base
 
 COPY package*.json ./
-RUN npm 
+RUN npm install
 COPY . .
 
 CMD ["npm", "start"]

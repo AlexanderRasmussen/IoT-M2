@@ -17,6 +17,7 @@ The wiring is setup using the text in the image, so the components are getting t
 ![alt text](https://github.com/Banders2/IoT-m1/blob/master/img/RaspberryGPIOSetup.png "Raspberry GPIO Setup")
 
 #### To run the image run: 
+- docker pull raniot/inspectingadjusting:latest
 - docker run -p 3000:3000 raniot/inspectingadjusting:latest
 - Access http://localhost:3000
 

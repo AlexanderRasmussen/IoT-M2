@@ -1,13 +1,13 @@
 var gpio = require('../gpio/gpio');
 
 module.exports.ledTurnOn = (req, res) => {
-    gpio.ledOn();
+    // gpio.ledOn();
 }
 
 module.exports.ledTurnOff = (req, res) => {
-    gpio.ledOff();
+    // gpio.ledOff();
 }
 
 module.exports.ledToggle = (req, res) => {
-    gpio.ledToggle();
+    // gpio.ledToggle();
 }

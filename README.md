@@ -14,7 +14,7 @@ The image of this repo is pushed to: https://hub.docker.com/r/raniot/inspectinga
 
 The wiring is setup using the text in the image, so the components are getting the correct voltage.
 
-![alt text](https://github.com/Banders2/IoT-m1/blob/master/img/RaspberryGPIOSetup.png "Raspberry GPIO Setup")
+![alt text](https://github.com/Raniot/IoT-M2/blob/master/img/RaspberryGPIOSetup.png "Raspberry GPIO Setup")
 
 #### To run the image run: 
 - docker pull raniot/inspectingadjusting:latest

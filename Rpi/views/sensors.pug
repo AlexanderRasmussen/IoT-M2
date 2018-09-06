@@ -1,11 +1,24 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  p Humidity: #{humidity}
-  p temperature: #{temperature}
-  p pir: #{pir}
+  div(align='middle')
+    h1= title
+    p Here the sensors attached to the Rpi are shown with their current values
+    br
+
+    div(class='container')
+      div Humidity:
+      div Temperature:
+      div Pir:
+    
+    div(class='container')
+      div #{humidity}
+      div #{temperature}
+      div #{pir}
+
+    br
+    form(action="/", method="get")
+      input(type="submit", value="Back" class="button-submit")
 
   script
     include ../autorefresh.js

@@ -6,3 +6,50 @@ body {
 a {
   color: #00B7FF;
 }
+
+.container > div {
+    display: inline-block;
+    display: -moz-inline-box;
+    *display: inline; /* For IE7 */
+    zoom: 1; /* Trigger hasLayout */
+    width: 33%;
+    text-align: center;
+}
+
+.button-submit {
+  width: 10%;
+  background-color: #F65D3C;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-back {
+  width: 31.5%;
+  background-color: #F65D3C;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-container form,
+.button-container form div {
+    display: inline;
+}
+
+.button-container button {
+    display: inline;
+    vertical-align: middle;
+}
+
+.divider{
+  width:10px;
+  height:auto;
+  display:inline-block;
+}

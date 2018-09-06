@@ -1,9 +1,13 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(align='middle')
+    h1= title
+    p Welcome to #{title}
 
-  a(href='/sensors') Follow me to sensors
-  br
-  a(href='/actuators') Follow me to actuators
+    div(class='button-container')
+      form(action="/sensors", method="get")
+        input(type="submit", value="Sensors" class="button-submit")
+      div(class='divider')
+      form(action="/actuators" method="get")
+        input(type="submit", value="Actuators" class="button-submit")

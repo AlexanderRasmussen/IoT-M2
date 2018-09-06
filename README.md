@@ -21,6 +21,9 @@ The wiring is setup using the text in the image, so the components are getting t
 - docker run -p 3000:3000 raniot/inspectingadjusting:latest
 - Access http://localhost:3000
 
+#### To see the site on a raspberry:
+http://89.150.134.103:3001/ (The site is using dummy values for sensors)
+
 ## Milestone Description
 ### Milestone 2: Inspecting & Adjusting
 The purpose of this milestone is implement the Web of Things model in a REST API.

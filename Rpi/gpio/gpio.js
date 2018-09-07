@@ -1,3 +1,5 @@
+// This file can be commented out to run locally on a windows machine.
+
 var Gpio = require('onoff').Gpio;
 var DhtSensor = require('rpi-dht-sensor');
 var dht = new DhtSensor.DHT22(12);

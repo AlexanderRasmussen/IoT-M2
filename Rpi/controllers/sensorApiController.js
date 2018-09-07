@@ -1,13 +1,25 @@
-//var gpio = require('../gpio/gpio');
+var gpio = require('../gpio/gpio');
 
 module.exports.getHumidity = (req, res) => {
-    res.send({humidity: 27, unit: '%'}); //gpio.humidityRead()
+    try {
+        res.send({humidity: gpio.humidityRead(), unit: '%'});
+    } catch (error) {
+        res.send({humidity: 46, unit: '%'});
+    }
 }
 
 module.exports.getTemperature = (req, res) => {
-    res.send({temperature: 25, unit: '°C'}); //gpio.temperatureRead()
+    try {
+        res.send({temperature: gpio.temperatureRead(), unit: '°C'});
+    } catch (error) {
+        res.send({temperature: 27, unit: '°C'});
+    }
 }
 
 module.exports.getPir = (req, res) => {
-    res.send({pirValue: 1}); //gpio.pirRead()
+    try {
+        res.send({pirValue: gpio.pirRead()});
+    } catch (error) {
+        res.send({pirValue: 1});
+    }
 }

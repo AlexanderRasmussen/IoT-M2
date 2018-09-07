@@ -23,15 +23,11 @@ router.get('/humidity', controller.getHumidity);
  * /api/sensors/temperature:
  *   get:
  *     tags:
- *       - users
- *     description: Returns all users
- *     produces:
- *       - application/json
+ *       - sensors
+ *     description: Returns the temperature at the sensor
  *     responses:
  *       200:
- *         description: An array of users
- *         schema:
- *           $ref: '#/definitions/users'
+ *         description: Temperatur and unit
  */
 router.get('/temperature', controller.getTemperature);
 /**
@@ -39,7 +35,7 @@ router.get('/temperature', controller.getTemperature);
  * /api/sensors/pir:
  *   get:
  *     tags:
- *       - users
+ *       - Sensors
  *     description: Returns all users
  *     produces:
  *       - application/json

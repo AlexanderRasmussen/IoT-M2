@@ -4,7 +4,7 @@ This is the second Milestone assigment in the course "E18 - Building the Interne
 
 ## How to run the code
 An automatic build pipeline has been setup, which builds the image on a raspberry Pi and push it to Docker Hub.
-The image of this repo is pushed to: https://hub.docker.com/r/raniot/inspectingadjusting/
+The image of this repo is pushed to: https://hub.docker.com/r/raniot/inspectingadjusting
 
 #### Requirements:
 - A raspberry pi with docker installed
@@ -22,7 +22,7 @@ The wiring is setup using the text in the image, so the components are getting t
 - Access http://localhost:3000
 
 #### To see the site on a raspberry:
-http://89.150.134.103:3001/ (The site is using dummy values for sensors)
+http://89.150.134.103:3001 (The site is using dummy values for sensors)
 
 ## Milestone Description
 ### Milestone 2: Inspecting & Adjusting

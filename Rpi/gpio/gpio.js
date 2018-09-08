@@ -5,7 +5,7 @@ var DhtSensor = require('rpi-dht-sensor');
 var dht = new DhtSensor.DHT22(12);
 var led = new Gpio(4, 'out');
 var ledstate = false;
-var pirval = 'Waiting for update';
+var pirval = '0';
 
 module.exports.ledOn = () => {
     ledstate = true;

@@ -3,22 +3,21 @@
 var Gpio = require('onoff').Gpio;
 var DhtSensor = require('rpi-dht-sensor');
 var dht = new DhtSensor.DHT22(12);
+var led = new Gpio(4, 'out');
 var ledstate = false;
 var pirval = 'Waiting for update';
 
 module.exports.ledOn = () => {
-    var led = new Gpio(4, 'out');
+    ledstate = true;
     led.writeSync(1);
 }
 
 module.exports.ledOff = () => {
-    var led = new Gpio(4, 'out');
+    ledstate = false;
     led.writeSync(0);
 }
 
 module.exports.ledToggle = () => {
-    var led = new Gpio(4, 'out');
-
     if(ledstate == false){
         ledstate = true;
         led.writeSync(1);

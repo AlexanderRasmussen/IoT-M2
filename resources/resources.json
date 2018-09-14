@@ -2,7 +2,7 @@
   "pi": {
     "name": "RANIoT",
     "description": "A simple WoT-connected Raspberry PI for the WoT book.",
-    "port": 8484,
+    "port": 3000,
     "sensors": {
       "temperature": {
         "name": "Temperature Sensor",

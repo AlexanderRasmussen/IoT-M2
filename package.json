@@ -5,7 +5,7 @@
   "main": "wot-pi.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./bin/www"
+    "start": "node wot-server.js"
   },
   "author": "Vlad Trifa",
   "license": "Apache-2.0",

@@ -1,21 +1,41 @@
 {
-  "name": "gettingstarted",
-  "version": "0.0.0",
-  "private": true,
+  "name": "wot-pi",
+  "version": "1.0.0",
+  "description": "A Web of Things server for the Pi",
+  "main": "wot-pi.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./bin/www"
   },
+  "author": "Vlad Trifa",
+  "license": "Apache-2.0",
+  "keywords": [
+    "web of things",
+    "building the web of things",
+    "wot",
+    "REST",
+    "HTTP",
+    "mqtt",
+    "pi",
+    "coap",
+    "m2m",
+    "iot",
+    "tcp",
+    "internet of things",
+    "messaging"
+  ],
   "dependencies": {
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "express": "~4.16.0",
-    "http-errors": "~1.6.2",
-    "morgan": "~1.9.0",
-    "pug": "~2.0.3",
-    "axios": "~0.18.0",
-    "onoff": "~3.2.1",
-    "rpi-dht-sensor": "~0.1.1",
-    "swagger-jsdoc": "^3.0.3",
-    "swagger-ui-express": "^4.0.1"
+    "bl": "^2.0.1",
+    "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "msgpack5": "^4.2.0",
+    "node-json2html": "*",
+    "ws": "^6.0.0",
+    "object-observer": "^1.0.1"
+  },
+  "optionalDependencies": {
+    "onoff": "*",
+    "node-dht-sensor": "*"
   }
 }

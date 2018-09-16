@@ -2,7 +2,10 @@
 ## Desciption
 This is the second Milestone assigment in the course "E18 - Building the Internet of Things with P2P and Cloud Computing"
 
-## How to run the code
+Two versions was created of this Milestone, first a version from our knowledge before reading chapter 6-7 which can be found here: https://github.com/Raniot/IoT/tree/master/IoT-M2-FirstEdition
+And then a second version following the way in the book. Which is also the reason why a lot of the code is very similar to the code described in the book. 
+
+## How is the image build?
 An automatic build pipeline has been setup, which builds the image on a raspberry Pi and push it to Docker Hub.
 The image of this repo is pushed to: https://hub.docker.com/r/raniot/inspectingadjusting
 
@@ -20,9 +23,11 @@ The wiring is setup using the text in the image, so the components are getting t
 - docker pull raniot/inspectingadjusting:latest
 - docker run -p 3000:3000 raniot/inspectingadjusting:latest
 - Access http://localhost:3000
+- Access web page http://localhost:3000/web
 
 #### To see the site on a raspberry:
-http://89.150.134.103:3001 (The site is using dummy values for sensors)
+http://89.150.134.103:3001 (The site is using the simulation values described in the book).
+Access the Web page on http://89.150.134.103:3001/web
 
 ## Milestone Description
 ### Milestone 2: Inspecting & Adjusting

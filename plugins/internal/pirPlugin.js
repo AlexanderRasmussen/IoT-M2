@@ -26,7 +26,7 @@ exports.stop = function () {
 function connectHardware() {
   var Gpio = require('onoff').Gpio;
   sensor = new Gpio(model.gpio, 'in', 'both');
-  sensor.read((err, value) => {
+  sensor.watch((err, value) => {
     if (err) exit(err);
     model.value = !!value;
     showValue();

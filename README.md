@@ -21,7 +21,7 @@ The wiring is setup using the text in the image, so the components are getting t
 
 #### To run the image run: 
 - docker pull raniot/inspectingadjusting:latest
-- docker run -p 3000:3000 raniot/inspectingadjusting:latest
+- docker run -p 3000:3000 --privileged --env SIMULATE=true raniot/inspectingadjusting:latest (default value true set to false for run on rpi)
 - Access http://localhost:3000
 - Access web page http://localhost:3000/web
 

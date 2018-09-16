@@ -4,6 +4,7 @@ var actuator, actuator2, interval;
 var model = resources.pi.actuators.leds['1'];
 var model2 = resources.pi.actuators.leds['2'];
 var pluginName = model.name;
+var pluginName2 = model2.name;
 var localParams = {'simulate': false, 'frequency': 2000};
 
 exports.start = (params) => {
@@ -49,7 +50,7 @@ function switchOnOff(value) {
 function switchOnOff2(value) {
   if (!localParams.simulate) {
     actuator2.write(value === true ? 1 : 0, function () {
-      console.info('Changed value of %s to %s', pluginName, value);
+      console.info('Changed value of %s to %s', pluginName2, value);
     });
   }
 };

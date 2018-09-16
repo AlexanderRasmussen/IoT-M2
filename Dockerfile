@@ -19,10 +19,11 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm install
-
 # Bundle app source
 COPY . .
+
 RUN npm install node-dht-sensor
+RUN npm install
+
 # Start our application, this runs the "start" script defined in package.json
 CMD [ "npm", "start" ]

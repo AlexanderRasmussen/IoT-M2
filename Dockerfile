@@ -23,6 +23,6 @@ RUN npm install
 
 # Bundle app source
 COPY . .
-
+RUN npm install node-dht-sensor
 # Start our application, this runs the "start" script defined in package.json
 CMD [ "npm", "start" ]

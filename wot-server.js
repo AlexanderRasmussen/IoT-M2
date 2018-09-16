@@ -14,6 +14,7 @@ var simulate = process.env.SIMULATE
 if(simulate === undefined){
   simulate = true
 }
+console.log('Simulation set to: ' + simulate);
 pirPlugin.start({'simulate': simulate, 'frequency': 2000}); //#B
 ledsPlugin.start({'simulate': simulate, 'frequency': 10000}); //#B
 dhtPlugin.start({'simulate': simulate, 'frequency': 10000}); //#B

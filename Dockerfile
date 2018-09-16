@@ -7,6 +7,7 @@ RUN apk add --no-cache curl gcc g++ make python2 && \
  ./configure --prefix=/usr && \
  make && \
  make install && \
+ cd / && \
  npm install node-dht-sensor
 
 COPY package*.json ./

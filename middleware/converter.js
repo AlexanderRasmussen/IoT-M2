@@ -9,8 +9,16 @@ module.exports = function () {
       switch (req.accepts(['json', 'html', 'application/x-msgpack'])) {
         case 'html':
           console.info('HTML representation selected!');
-          var test = req.url;
-          var transform = {'tag': 'div', 'html': '${name} : ${value} <br> Description: ${description}'};
+          if(req.result.name) //easy way to see if it is a sensor or actuator
+            var transform = {'tag': 'div', 'html': '${name} : ${value} <br> Description: ${description}'};
+          else{
+            var htmlString = "";
+            Object.keys(req.result).forEach(element =>   {
+              url = req.url + '/' + element;
+              htmlString += '<br> <a href='+ url +'>' + element + '</a> '
+            });
+            var transform = {'tag': 'div', 'html': 'This page contains the following subpages' + htmlString};
+          }
           res.send(json2html.transform(req.result, transform));
           return;
         case 'application/x-msgpack':

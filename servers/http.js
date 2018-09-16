@@ -18,18 +18,19 @@ app.use(cors());
 app.use('/pi/actuators', actuatorsRoutes);
 app.use('/pi/sensors', sensorRoutes);
 
+app.get('/', function (req, res) {
+  res.send('Go to the pi page: <a href="pi" class="pi">pi</a>');
+});
+
 app.get('/pi', function (req, res) {
-  // res.send('This is the most awesome page efter created by '+ resources.pi.name + '<br> Description: ' + resources.pi.description)
   res.sendFile(path.join(__dirname+'/../public/index.html'));
 });
 
 app.get('/links', function (req, res) {
-  // res.send('This is the most awesome page efter created by '+ resources.pi.name + '<br> Description: ' + resources.pi.description)
   res.sendFile(path.join(__dirname+'/../public/links.json'));
 });
 
 app.get('/web', function (req, res) {
-  // res.send('This is the most awesome page efter created by '+ resources.pi.name + '<br> Description: ' + resources.pi.description)
   res.sendFile(path.join(__dirname+'/../public/websocketsClient.html'));
 });
 

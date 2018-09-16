@@ -23,5 +23,3 @@ var server = httpServer.listen(resources.pi.port, function () {
 
   console.info('Your WoT Pi is up and running on port %s', resources.pi.port);
 });
-//#A Require all the sensor plugins you need
-//#B Start them with a parameter object; here you start them on a laptop so you activate the simulation function

@@ -29,6 +29,8 @@
             }
         };
     }
-    subscribeToWs('ws://localhost:3000/pi');
+    var subscribeUrl = 'ws://' + window.location.hostname + ':' + window.location.port + '/pi'
+    console.log('Subscribing to: ' + subscribeUrl)
+    subscribeToWs(subscribeUrl);
     
 </script></body></html>

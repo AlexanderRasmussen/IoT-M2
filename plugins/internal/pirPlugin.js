@@ -26,11 +26,11 @@ exports.stop = function () {
 function connectHardware() {
   var Gpio = require('onoff').Gpio;
   sensor = new Gpio(model.gpio, 'in', 'both');
-  sensor.watch((err, value) => {
+  sensor.read((err, val) => {
     if (err) exit(err);
     model.value = !!value;
     showValue();
-  });
+  })
   console.info('Hardware %s sensor started!', pluginName);
 };
 

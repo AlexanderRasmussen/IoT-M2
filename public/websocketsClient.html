@@ -25,8 +25,10 @@
                 document.getElementById("pir").innerHTML = eventString;
             if(eventString.includes("Temp"))
                 document.getElementById("temp").innerHTML = eventString;
-            if(eventString.includes("Humi"))
-                document.getElementById("humi").innerHTML = eventString;
+            if(eventString.includes("Led1"))
+                document.getElementById("led1").innerHTML = eventString;
+            if(eventString.includes("Led2"))
+                document.getElementById("led2").innerHTML = eventString;
         };
         socket.onerror = function (error) {
             console.log('An error occurred while trying to connect to a Websocket!');

@@ -10,6 +10,7 @@ RUN apk add --no-cache curl gcc g++ make python2 && \
  rm -rf /usr/src/bcm2835-1.56 && \
  apk del curl
 
+RUN npm install node-dht-sensor
 COPY package*.json ./
 
 RUN npm install

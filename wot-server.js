@@ -10,9 +10,13 @@ var ledsPlugin = require('./plugins/internal/ledsPlugin'), //#A
 
 // Internal Plugins for sensors/actuators connected to the PI GPIOs
 // If you test this with real sensors do not forget to set simulate to 'false'
-pirPlugin.start({'simulate': false, 'frequency': 2000}); //#B
-ledsPlugin.start({'simulate': false, 'frequency': 10000}); //#B
-dhtPlugin.start({'simulate': false, 'frequency': 10000}); //#B
+var simulate = process.env.SIMULATE
+if(!simulate){
+  simulate = true
+}
+pirPlugin.start({'simulate': simulate, 'frequency': 2000}); //#B
+ledsPlugin.start({'simulate': simulate, 'frequency': 10000}); //#B
+dhtPlugin.start({'simulate': simulate, 'frequency': 10000}); //#B
 
 // HTTP Server
 var server = httpServer.listen(resources.pi.port, function () {

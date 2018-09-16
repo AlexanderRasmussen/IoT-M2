@@ -4,6 +4,9 @@ var WebSocketServer = require('ws').Server,
   var pirModel = resources.pi.sensors.pir;
   var tempModel = resources.pi.sensors.temperature;
   var humiModel = resources.pi.sensors.humidity;
+  var led1Model = resources.pi.actuators.leds['1'];
+  var led2Model = resources.pi.actuators.leds['2'];
+
 exports.listen = function(server) {
   var wss = new WebSocketServer({server: server}); //#A
   console.info('WebSocket server started...');
@@ -18,6 +21,12 @@ exports.listen = function(server) {
         }
         else if(checkModel(humiModel,change)){
           ws.send(JSON.stringify("Humidity: " +  change.value), function () {});
+        }
+        else if(checkModel(led1Model,change)){
+          ws.send(JSON.stringify("Led1: " +  change.value), function () {});
+        }
+        else if(checkModel(led2Model,change)){
+          ws.send(JSON.stringify("Led2: " +  change.value), function () {});
         }
     });
   });

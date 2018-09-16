@@ -4,7 +4,17 @@
 <p id="pir">No Pir value yet!</p>
 <p id="temp">No temperature measurement yet!</p>
 <p id="humi">No humidity measurement yet!</p>
-<body><script>
+<p id="led1">Led hasn't changed value yet</p>
+<p id="led2">Led hasn't changed value yet</p>
+
+<input type="Button" value="Turn on led 1" onclick="TurnLEDOn(1)"/> 
+<input type="Button" value="Turn off led 1" onclick="TurnLEDOff(1)"/>
+<br/>
+<input type="Button" value="Turn on led 2" onclick="TurnLEDOn(2)"/> 
+<input type="Button" value="Turn off led 2" onclick="TurnLEDOff(2)"/>
+
+<body>
+<script>
     function subscribeToWs(url, msg) {
         var socket = new WebSocket(url);
 
@@ -33,4 +43,20 @@
     console.log('Subscribing to: ' + subscribeUrl)
     subscribeToWs(subscribeUrl);
     
-</script></body></html>
+    function TurnLEDOn(id) {
+        var xhr = new XMLHttpRequest(); 
+        xhr.open("PUT", "/pi/actuators/leds/" + id, true);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.send(JSON.stringify({value: true}));
+    } 
+    
+    function TurnLEDOff(id) {
+        var xhr = new XMLHttpRequest(); 
+        xhr.open("PUT", "/pi/actuators/leds/" + id, true);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.send(JSON.stringify({value: false}));
+    }
+
+</script>
+</body>
+</html>

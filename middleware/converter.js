@@ -10,7 +10,15 @@ module.exports = function () {
         case 'html':
           console.info('HTML representation selected!');
           if(req.result.name) //easy way to see if it is a sensor or actuator
-            var transform = {'tag': 'div', 'html': '${name} : ${value} <br> Description: ${description}'};
+            if(req.result.name.indexOf('LED') + 1){
+              var id = req.result.name.substring(req.result.name.length - 1);
+              var turnOnButton = '<input type="Button" value="Turn on" onClick="TurnLEDOn()"/>';
+              var turnOffButton = '<input type="Button" value="Turn off" onclick="TurnLEDOff()"/>';
+              var script = '<script>function TurnLEDOn() {var xhr = new XMLHttpRequest(); xhr.open("PUT", "/pi/actuators/leds/' + id + '", true);xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");xhr.send(JSON.stringify({value: true}));} function TurnLEDOff() {var xhr = new XMLHttpRequest(); xhr.open("PUT", "/pi/actuators/leds/' + id + '", true);xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");xhr.send(JSON.stringify({value: false}));}</script>';
+              var transform = {'tag': 'div', 'html': '${name} : ${value} <br>' + turnOnButton + turnOffButton + script};
+            }else {
+              var transform = {'tag': 'div', 'html': '${name} : ${value} <br> Description: ${description}'};
+            }
           else{
             var htmlString = "";
             Object.keys(req.result).forEach(element =>   {
